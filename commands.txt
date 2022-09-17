@@ -1,0 +1,5 @@
+Run:
+ng serve --open
+
+Generate a New Component:
+ng generate component {component-name} --no-spec

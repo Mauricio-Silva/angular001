@@ -1,0 +1,8 @@
+{
+    "ignorePaths": [
+        // "**/vscode-extension/**"
+    ],
+    "words": [
+    
+    ]
+}
