@@ -1,6 +1,8 @@
 {
     "ignorePaths": [
         // "**/vscode-extension/**"
+        "info.txt",
+        "commands.txt"
     ],
     "words": [
     

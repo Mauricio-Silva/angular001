@@ -1,5 +1,11 @@
+Create a New App:
+ng new {app-name}
+
 Run:
 ng serve --open
 
 Generate a New Component:
 ng generate component {component-name} --no-spec
+
+Add Angular Material:
+ng add @angular/material

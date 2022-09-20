@@ -1,0 +1,2 @@
+Angular Framework:
+Baseado em SPA(Single Page Application) e componentes
