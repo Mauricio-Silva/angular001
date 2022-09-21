@@ -1,0 +1,47 @@
+section {
+    padding: 8px 15px;
+    margin-top: 20px;
+    border-left: 5px solid #222;
+    transition: border .5s ease;
+}
+section:hover {
+    border-width: 15px;
+}
+
+
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li {
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+span {
+    padding: 5px 10px;
+}
+li span:nth-of-type(1), li span:nth-of-type(3) {
+    background-color: #eee;
+}
+li:hover {
+    background-color: #ddd;
+    font-weight: 500;
+}
+
+
+
+label {
+    margin-right: 10px;
+}
+input[type="text"] {
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    padding: 5px 8px;
+}
+input[type="text"]:focus {
+    border-color: #de1555;
+    outline: 1px solid #de1555;
+}
