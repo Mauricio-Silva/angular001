@@ -16,6 +16,6 @@ export class Student {
     this.note1 = note1;
     this.note2 = note2;
     this.average = (note1 + note2) / 2;
-    this.status = this.average >= 6 ? 'approved' : 'disapproved'
+    this.status = this.average >= 6 ? 'Aprovado' : 'Reprovado'
   }
 }

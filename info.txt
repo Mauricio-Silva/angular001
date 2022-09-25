@@ -6,8 +6,8 @@ Baseado em SPA(Single Page Application) e componentes
 ✓ Criar uma lista de 10 alunos
 ✓ Criar Table: Angular Material(https://material.angular.io/components/table/api)
 - Quando clicar em aluno: 
-    - Renderizar um card do aluno;
-    - Exibir se está aprovado ou reprovado;
+    ✓ Renderizar um card do aluno;
+    ✓ Exibir se está aprovado ou reprovado;
     - Tentar:
         - Usar Componente 'Dialog' com decorator '@input'
         - Filter na tabela
