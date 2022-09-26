@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { StudentService } from './service';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentDialogComponent } from '../student-dialog/student-dialog.component';
+import { StudentFormDeleteComponent } from '../student-form-delete/student-form-delete.component';
 // cSpell:disable
 
 
@@ -32,19 +33,24 @@ export class StudentComponent implements OnInit {
     public dialog: MatDialog,
   ) { }
 
+
   columns = COLUMNS;
   displayedColumns = COLUMNS.map(student => student.attribute);
   dataSource = new MatTableDataSource(this.studentService.GetAllStudents());
+
 
   showStudentInformation(student: Student) {
     this.dialog.open(StudentDialogComponent, {
       data: student,
     });
   }
-
   showDeleteStudentForm() {
+    this.dialog.open(StudentFormDeleteComponent);
+  }
+  showCreateStudentForm() {
     this.dialog.open(StudentFormCreateComponent);
   }
+
 
   ngOnInit(): void {
   }

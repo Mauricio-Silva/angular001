@@ -31,3 +31,6 @@ button:hover {
 button:active {
     background-color: #006599;
 }
+button:first-of-type {
+  margin-right: 15px;
+}
