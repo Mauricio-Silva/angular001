@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StudentService } from '../student/service';
+import { StudentService } from '../student/student.service';
 import { Student } from '../student/student';
 
 @Component({
@@ -40,11 +40,12 @@ export class StudentFormCreateComponent implements OnInit {
     const studentsIds = this.studentService.GetAllStudents().map(student => student.id);
     const max_student_id = Math.max(...studentsIds);
     this.student_id = max_student_id + 1;
-    
+
     console.log(this.student_id, this.student_name, this.student_age, this.student_note1, this.student_note2);
     
     const student = new Student(this.student_id, this.student_name, this.student_age, this.student_note1, this.student_note2)
     this.studentService.CreateNewStudent(student);
+    
   }
 
   ngOnInit(): void {

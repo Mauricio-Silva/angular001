@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StudentService } from '../student/service';
+import { StudentService } from '../student/student.service';
 
 @Component({
   selector: 'app-student-form-delete',

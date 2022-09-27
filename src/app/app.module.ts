@@ -1,4 +1,4 @@
-import { StudentService } from './student/service';
+import { StudentService } from './student/student.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

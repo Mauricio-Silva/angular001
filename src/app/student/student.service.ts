@@ -3,7 +3,7 @@ import { Student } from "./student";
 
 export class StudentService {
     private DATABASE: Student[] = [
-        new Student(1, 'Mauricio', 22, 7, 7.5),
+        new Student(1, 'Mauricio', 22, 5, 5.7),
         new Student(2, 'Caio', 21, 7.8, 8.5),
         new Student(3, 'Toshiba', 23, 8, 8),
         new Student(4, 'Luiz', 19, 9, 8.5),
@@ -17,7 +17,6 @@ export class StudentService {
 
 
     public GetAllStudents(): Student[] {
-        console.log(this.DATABASE);
         return this.DATABASE;
     }
 
