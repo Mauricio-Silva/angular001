@@ -23,6 +23,7 @@ export class StudentService {
 
     public CreateNewStudent(student: Student): void {
         this.DATABASE.push(student);
+        console.log(this.DATABASE);
     }
 
 

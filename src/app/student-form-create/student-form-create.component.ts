@@ -1,3 +1,4 @@
+import { StudentComponent } from './../student/student.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { StudentService } from '../student/student.service';
@@ -20,6 +21,7 @@ export class StudentFormCreateComponent implements OnInit {
 
   constructor(
     private studentService: StudentService,
+    private studentComponent: StudentComponent,
     private form: FormBuilder,
   ) { 
     this.studentForm = this.form.group({
@@ -46,6 +48,7 @@ export class StudentFormCreateComponent implements OnInit {
     const student = new Student(this.student_id, this.student_name, this.student_age, this.student_note1, this.student_note2)
     this.studentService.CreateNewStudent(student);
     
+    this.studentComponent.updateDataSource();
   }
 
   ngOnInit(): void {

@@ -34,7 +34,7 @@ import { StudentFormCreateComponent } from './student-form-create/student-form-c
     MatFormFieldModule,
     MatDialogModule,
   ],
-  providers: [StudentService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [StudentService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}, StudentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
