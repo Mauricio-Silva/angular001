@@ -1,13 +1,19 @@
 Angular Framework:
 Baseado em SPA(Single Page Application) e componentes
 
-✓ Criar novo componente Aluno
-✓ Criar Objeto Aluno(id, nome, email, idade, nota1, nota2, media, status)
-✓ Criar uma lista de 10 alunos
-✓ Criar Table: Angular Material(https://material.angular.io/components/table/api)
-- Quando clicar em aluno: 
-    ✓ Renderizar um card do aluno;
-    ✓ Exibir se está aprovado ou reprovado;
-    - Tentar:
-        - Usar Componente 'Dialog' com decorator '@input'
-        - Filter na tabela
+Create a New App:
+ng new {app-name}
+
+Run:
+ng serve --open
+
+Generate a New Component:
+ng generate component { path | component-name } --skip-tests
+ng g c { path | component-name } --skip-tests
+
+Generate a New Module:
+ng generate module { path | component-name } --flat
+ng g m { path | component-name } --flat
+
+Add Angular Material:
+ng add @angular/material

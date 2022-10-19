@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { StudentService } from '../student/student.service';
+import { StudentService } from '../../core/services/student.service';
+
 
 @Component({
   selector: 'app-student-form-delete',
   templateUrl: './student-form-delete.component.html',
   styleUrls: ['./student-form-delete.component.css']
 })
-export class StudentFormDeleteComponent implements OnInit {
+export class StudentFormDeleteComponent {
 
-  studentsList = this.studentService.GetAllStudents().map(student => [student.id, student.name]);
   public studentForm: FormGroup;
-  student_id: number = 0;
+  public student_id: number = 0;
+  public studentsList: (number|string)[][] = [];
 
 
   constructor(
@@ -23,14 +24,14 @@ export class StudentFormDeleteComponent implements OnInit {
     });
   }
 
+  getAllStudents(): void {
+    this.studentService.findAll().subscribe(students => this.studentsList = students.map(student => [student.id, student.name]));
+  }
 
   deleteStudent() {
     console.log(this.student_id);
     this.student_id = this.studentForm.get('student_id')?.value;
     console.log(this.student_id);
-    this.studentService.DeleteStudent(this.student_id);
-  }
-
-  ngOnInit(): void {
+    this.studentService.delete(this.student_id);
   }
 }

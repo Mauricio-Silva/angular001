@@ -23,3 +23,24 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-color: #4c93b7;
     outline: 2px solid rgba(127,178,204,0.5);
 }
+
+
+code {
+    color: #de1555;
+}
+
+
+
+.content {
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.box2 {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 2rem;
+}
