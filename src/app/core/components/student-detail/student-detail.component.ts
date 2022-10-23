@@ -11,7 +11,7 @@ import { Student } from '../../models/student';
 export class StudentDetailComponent implements OnInit {
   @Input()
   student?: Student;
-
+  
   constructor(
     private route: ActivatedRoute,
     private studentService: StudentService,

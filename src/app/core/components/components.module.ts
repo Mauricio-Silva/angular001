@@ -9,6 +9,7 @@ import { StudentInsertDialogComponent } from './student-insert-dialog/student-in
 import { StudentDetailComponent } from './student-detail/student-detail.component';
 import { StartComponent } from './start/start.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { StudentRemoveDialogComponent } from './student-remove-dialog/student-remove-dialog.component';
 
 
 
@@ -21,7 +22,7 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  declarations: [COMPONENTS, StudentInsertDialogComponent, StudentDetailComponent, StartComponent],
+  declarations: [COMPONENTS, StudentInsertDialogComponent, StudentDetailComponent, StartComponent, StudentRemoveDialogComponent],
   imports: [
     CommonModule, 
     MaterialModule, 

@@ -1,4 +1,35 @@
 <mat-card *ngIf="student !== undefined">
-  <mat-card-title>Hero Name</mat-card-title>
-  <mat-card-content>{{ student.name }}</mat-card-content>
+  <mat-card-title>Student</mat-card-title>
+  <mat-card-content>
+    <table>
+      <tr>
+        <td>Id</td>
+        <td>{{ student.id }}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>{{ student.name }}</td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>{{ student.age }}</td>
+      </tr>
+      <tr>
+        <td>Note1</td>
+        <td>{{ student.note1 }}</td>
+      </tr>
+      <tr>
+        <td>Note2</td>
+        <td>{{ student.note2 }}</td>
+      </tr>
+      <tr>
+        <td>Average</td>
+        <td>{{ student.average }}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>{{ student.status }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
 </mat-card>

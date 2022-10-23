@@ -4,6 +4,7 @@ import { MatTable } from '@angular/material/table';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
 import { StudentInsertDialogComponent } from '../student-insert-dialog/student-insert-dialog.component';
+import { StudentRemoveDialogComponent } from '../student-remove-dialog/student-remove-dialog.component';
 
 
 
@@ -30,15 +31,11 @@ export class StudentComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getStudents()
+    this.dataSource = [...this.studentService.getAllStudents()];
   }
 
   selectStudent(student: Student): void {
     this.selectedStudent = student;
-  }
-
-  getStudents(): void {
-    this.dataSource = [...this.studentService.getAllStudents()];
   }
 
   showCreateStudentForm(): void {
@@ -53,10 +50,27 @@ export class StudentComponent implements OnInit {
         console.log(result);
         
         let id = this.studentService.getMaximumId() + 1;
-        let student = new Student(id, 'HAHA', 22, 5, 5.7)
+        let student = new Student(id, result.name, result.age, Number(result.note1), Number(result.note2))
         this.studentService.addStudent(student).subscribe((students) => {
           this.dataSource = students;
         });
+        this.table.renderRows();
+      }
+    });
+  }
+
+  showRemoveStudentForm(): void {
+    const dialogRef = this.dialog.open(StudentRemoveDialogComponent, {
+      width: '300px',
+      data: this.dataSource.map(student => [student.id, student.name]),
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result !== undefined) {
+
+        console.log(result);
+
+        this.dataSource = this.dataSource.filter(student => student.id != result);
         this.table.renderRows();
       }
     });

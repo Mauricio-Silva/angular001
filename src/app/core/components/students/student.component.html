@@ -1,54 +1,56 @@
 <!-- cSpell:disable -->
-<section>
-  <header class="btn">
-    <button mat-raised-button (click)="showCreateStudentForm()">Cadastrar</button>
-    <!-- <button mat-raised-button (click)="showDeleteStudentForm()">Apagar</button> -->
-  </header>
-  <main>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
 
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let student">{{ student.id }}</td>
-      </ng-container>
+<header class="btn">
+  <button mat-raised-button (click)="showCreateStudentForm()">Cadastrar</button>
+  <button mat-raised-button (click)="showRemoveStudentForm()">Apagar</button>
+</header>
 
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>Name</th>
-        <td mat-cell *matCellDef="let student">{{ student.name }}</td>
-      </ng-container>
 
-      <ng-container matColumnDef="email">
-        <th mat-header-cell *matHeaderCellDef>Email</th>
-        <td mat-cell *matCellDef="let student">{{ student.email }}</td>
-      </ng-container>
 
-      <ng-container matColumnDef="age">
-        <th mat-header-cell *matHeaderCellDef>Age</th>
-        <td mat-cell *matCellDef="let student">{{ student.age }}</td>
-      </ng-container>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
 
-      <ng-container matColumnDef="note1">
-        <th mat-header-cell *matHeaderCellDef>Note1</th>
-        <td mat-cell *matCellDef="let student">{{ student.note1 }}</td>
-      </ng-container>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let student">{{ student.id }}</td>
+  </ng-container>
 
-      <ng-container matColumnDef="note2">
-        <th mat-header-cell *matHeaderCellDef>Note2</th>
-        <td mat-cell *matCellDef="let student">{{ student.note2 }}</td>
-      </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let student">{{ student.name }}</td>
+  </ng-container>
 
-      <ng-container matColumnDef="average">
-        <th mat-header-cell *matHeaderCellDef>Average</th>
-        <td mat-cell *matCellDef="let student">{{ student.average }}</td>
-      </ng-container>
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let student">{{ student.email }}</td>
+  </ng-container>
 
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef>Status</th>
-        <td mat-cell *matCellDef="let element" [ngStyle]="{'color':element.status === 'Aprovado' ? 'green' : 'red'}">{{element.status}}</td>
-      </ng-container>
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef>Age</th>
+    <td mat-cell *matCellDef="let student">{{ student.age }}</td>
+  </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let hero; columns: displayedColumns" (click)="selectStudent(hero)" routerLink="/heroes/{{hero.id}}"></tr>
-    </table>
-  </main>
-</section>
+  <ng-container matColumnDef="note1">
+    <th mat-header-cell *matHeaderCellDef>Note1</th>
+    <td mat-cell *matCellDef="let student">{{ student.note1 }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="note2">
+    <th mat-header-cell *matHeaderCellDef>Note2</th>
+    <td mat-cell *matCellDef="let student">{{ student.note2 }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="average">
+    <th mat-header-cell *matHeaderCellDef>Average</th>
+    <td mat-cell *matCellDef="let student">{{ student.average }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>Status</th>
+    <td mat-cell *matCellDef="let element" [ngStyle]="{'color':element.status === 'Aprovado' ? 'green' : 'red'}">{{element.status}}</td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let student; columns: displayedColumns" (click)="selectStudent(student)" routerLink="/students/{{student.id}}"></tr>
+</table>
+
+

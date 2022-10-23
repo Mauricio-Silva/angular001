@@ -1,46 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-.form-group {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 15px;
-}
-.form-group label {
-    margin-bottom: 5px;
-}
-.form-control {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 8px 12px;
-}
-.form-control:focus {
-    border-color: #4c93b7;
-    outline: 2px solid rgba(127,178,204,0.5);
-}
-
-
-code {
-    color: #de1555;
-}
-
-
-
-.content {
-  padding: 2rem;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 2rem;
-}
-
-.box2 {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 2rem;
+body { 
+    margin: 0;
 }

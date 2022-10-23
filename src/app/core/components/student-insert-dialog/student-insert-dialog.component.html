@@ -1,14 +1,24 @@
-<h1 mat-dialog-title>Add Hero</h1>
+<h1 mat-dialog-title>Add a New Student</h1>
 <div mat-dialog-content>
-  <p>Hero detail:</p>
+  <p>Student data:</p>
   <mat-form-field appearance="fill">
-    <mat-label>Hero name:</mat-label>
-    <input matInput [(ngModel)]="data.name" />
+    <mat-label>name:</mat-label>
+    <input matInput [(ngModel)]="data.name" required/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>age:</mat-label>
+    <input matInput [(ngModel)]="data.age" required/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>note1:</mat-label>
+    <input matInput [(ngModel)]="data.note1" required/>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>note2:</mat-label>
+    <input matInput [(ngModel)]="data.note2" required/>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()" color="primary">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>
-    Ok
-  </button>
+  <button mat-button (click)="closeDialog()" color="primary">Cancel</button>
+  <button mat-button (click)="validateForm()" cdkFocusInitial>Add</button>
 </div>
