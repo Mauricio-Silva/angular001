@@ -1,6 +1,6 @@
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Component, Inject } from '@angular/core';
-import { Student } from '../../models/student';
+import { Student } from '../../../models/student';
 
 @Component({
   selector: 'app-student-insert-dialog',
@@ -16,7 +16,7 @@ export class StudentInsertDialogComponent {
   ) { }
 
   closeDialog(): void {
-    this.dialogRef.close()
+    this.dialogRef.close();
   }
 
   validateForm(): void {

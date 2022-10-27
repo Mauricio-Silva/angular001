@@ -1,0 +1,53 @@
+<h1 mat-dialog-title>User</h1>
+<div mat-dialog-content>
+  <p>User data:</p>
+  <table>
+      <tr>
+        <td>Id</td>
+        <td>{{ data.id }}</td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>{{ data.name }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ data.email }}</td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>{{ data.password }}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>{{ data.status }}</td>
+      </tr>
+      <tr>
+        <td>ConfirmationToken</td>
+        <td>{{ data.confirmationToken }}</td>
+      </tr>
+      <tr>
+        <td>Salt</td>
+        <td>{{ data.salt }}</td>
+      </tr>
+      <tr>
+        <td>CreateAt</td>
+        <td>{{ data.createAt }}</td>
+      </tr>
+      <tr>
+        <td>UpdateAt</td>
+        <td>{{ data.updateAt }}</td>
+      </tr>
+      <tr>
+        <td>Task</td>
+        <td>{{ data.task }}</td>
+      </tr>
+    </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" color="primary" cdkFocusInitial>Close</button>
+</div>
+
+
+
+

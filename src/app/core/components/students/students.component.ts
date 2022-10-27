@@ -3,15 +3,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
-import { StudentInsertDialogComponent } from '../student-insert-dialog/student-insert-dialog.component';
-import { StudentRemoveDialogComponent } from '../student-remove-dialog/student-remove-dialog.component';
+import { StudentInsertDialogComponent } from './insert-dialog/student-insert-dialog.component';
+import { StudentRemoveDialogComponent } from './remove-dialog/student-remove-dialog.component';
 
 
 
 @Component({
   selector: 'app-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.css']
+  templateUrl: './students.component.html',
+  styleUrls: ['./students.component.css']
 })
 export class StudentComponent implements OnInit {
   selectedStudent?: Student;
