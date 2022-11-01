@@ -16,31 +16,37 @@ export class UsersComponent implements OnInit {
   dataSource: User[] = [];
 
   @ViewChild(MatTable) table!: MatTable<User>;
-  displayedColumns: string[] = ['id', 'name', 'email', 'password', 'status', 'confirmationToken', 'salt', 'createAt', 'updateAt', 'task'];
+  displayedColumns: string[] = ['id', 'name', 'email', 'status', 'createAt', 'updateAt'];
+
 
   constructor(
     private userService: UserService,
     private dialog: MatDialog,
   ) { }
 
+
   ngOnInit(): void {
-    this.userService.findAll().subscribe((users) => {
-      this.dataSource = users;
-    });
+    this.userService.findAll().subscribe(
+      {
+        next: (users) => {
+          this.dataSource = users;
+        },
+        error: (e) => {
+          console.error(e);
+        }
+      }
+    );
   }
 
 
   showUserCreateForm(): void {
-    const dialogRef = this.dialog.open(UserInsertDialogComponent, {
-      width: '300px',
-      data: { },
+    const dialogRef = this.dialog.open(UserInsertDialogComponent, { 
+      width: '350px', 
+      data: {} 
     });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result !== undefined) {
-        console.log(result);
-        this.userService.create(result).subscribe((x) => {
-          console.log(x);
+    dialogRef.afterClosed().subscribe((user) => {
+      if (user !== undefined) {
+        this.userService.create(user).subscribe(() => {
           this.userService.findAll().subscribe((users) => {
             this.dataSource = users;
           });
@@ -53,14 +59,12 @@ export class UsersComponent implements OnInit {
 
   showUserRemoveForm(): void {
     const dialogRef = this.dialog.open(UserRemoveDialogComponent, {
-      width: '300px',
+      width: '350px',
       data: this.dataSource.map(user => [user.id, user.name]),
     });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result !== undefined) {
-        console.log(result);
-        this.dataSource = this.dataSource.filter(user => user.id != result);
+    dialogRef.afterClosed().subscribe((id) => {
+      if (id !== undefined) {
+        this.dataSource = this.dataSource.filter(user => user.id != id);
         this.table.renderRows();
       }
     });
@@ -68,9 +72,6 @@ export class UsersComponent implements OnInit {
 
 
   showUserDetail(user: User): void {
-    this.dialog.open(UserDetailDialogComponent, {
-      width: '300px',
-      data: user,
-    });
+    this.dialog.open(UserDetailDialogComponent, { data: user });
   }
 }

@@ -1,3 +1,4 @@
+import { TasksComponent } from './core/components/tasks/tasks.component';
 import { UsersComponent } from './core/components/users/users.component';
 import { StartComponent } from './core/components/start/start.component';
 import { StudentDetailComponent } from './core/components/students/detail-page/student-detail.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'students', component: StudentComponent },
   { path: 'students/:id', component: StudentDetailComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'tasks', component: TasksComponent },
 ];
 
 @NgModule({

@@ -14,6 +14,10 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailDialogComponent } from './users/detail-dialog/detail-dialog.component';
 import { UserInsertDialogComponent } from './users/insert-dialog/insert-dialog.component';
 import { UserRemoveDialogComponent } from './users/remove-dialog/remove-dialog.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskDetailDialogComponent } from './tasks/detail-dialog/detail-dialog.component';
+import { TaskInsertDialogComponent } from './tasks/insert-dialog/insert-dialog.component';
+import { TaskRemoveDialogComponent } from './tasks/remove-dialog/remove-dialog.component';
 
 
 
@@ -28,6 +32,10 @@ const COMPONENTS = [
     HeroesComponent,
     UsersComponent,
     StartComponent,
+    TasksComponent, 
+    TaskDetailDialogComponent, 
+    TaskInsertDialogComponent, 
+    TaskRemoveDialogComponent
 ];
 
 @NgModule({
