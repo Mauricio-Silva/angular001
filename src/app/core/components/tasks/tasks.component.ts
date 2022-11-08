@@ -14,9 +14,10 @@ import { TaskDetailDialogComponent } from './detail-dialog/detail-dialog.compone
 })
 export class TasksComponent implements OnInit {
   dataSource: Task[] = [];
+  doTasks: Task[] = [];
+  doingTasks: Task[] = [];
+  doneTasks: Task[] = [];
 
-  @ViewChild(MatTable) table!: MatTable<Task>;
-  displayedColumns: string[] = ['id', 'description', 'status'];
 
 
   constructor(
@@ -25,11 +26,19 @@ export class TasksComponent implements OnInit {
   ) { }
 
 
+  updateDatasource(): void {
+    this.doTasks = this.dataSource.filter(task => task.status == 'do')
+    this.doingTasks = this.dataSource.filter(task => task.status == 'doing')
+    this.doneTasks = this.dataSource.filter(task => task.status == 'done')
+  }
+
+
   ngOnInit(): void {
     this.taskService.findAll().subscribe(
       {
         next: (tasks) => {
           this.dataSource = tasks;
+          this.updateDatasource();
         },
         error: (e) => {
           console.error(e);
@@ -49,9 +58,9 @@ export class TasksComponent implements OnInit {
         this.taskService.create(task).subscribe(() => {
           this.taskService.findAll().subscribe((tasks) => {
             this.dataSource = tasks;
+            this.updateDatasource();
           });
         });
-        this.table.renderRows();
       }
     });
   }
@@ -65,7 +74,7 @@ export class TasksComponent implements OnInit {
     dialogRef.afterClosed().subscribe((id) => {
       if (id !== undefined) {
         this.dataSource = this.dataSource.filter(task => task.id != id);
-        this.table.renderRows();
+        this.updateDatasource();
       }
     });
   }

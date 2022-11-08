@@ -1,11 +1,11 @@
 import { UserDetailDialogComponent } from './detail-dialog/detail-dialog.component';
-import { MatDialog } from '@angular/material/dialog';
-import { UserService } from './../../services/user.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTable } from '@angular/material/table';
-import { User } from '../../models/user';
 import { UserInsertDialogComponent } from './insert-dialog/insert-dialog.component';
 import { UserRemoveDialogComponent } from './remove-dialog/remove-dialog.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { UserService } from './../../services/user.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTable } from '@angular/material/table';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-users',

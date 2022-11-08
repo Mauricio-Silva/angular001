@@ -7,11 +7,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
 import { NgModule } from '@angular/core';
 
 
 
 const COMPONENTS = [
+  ReactiveFormsModule,
   MatFormFieldModule,
   MatToolbarModule,
   MatButtonModule,
@@ -21,6 +24,7 @@ const COMPONENTS = [
   MatTableModule,
   MatInputModule,
   MatIconModule,
+  MatListModule,
 ]
 
 @NgModule({
